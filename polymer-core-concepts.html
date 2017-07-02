@@ -1,0 +1,42 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="polymer-core-concepts">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[prop1]]! and [[todaydate]]</h2>
+  </template>
+
+  <script>
+    /**
+     * `polymer-core-concepts`
+     * polymer core concepts
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class PolymerCoreConcepts extends Polymer.Element {
+      static get is() { return 'polymer-core-concepts'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'Hello World'
+          },
+          todaydate:{
+            type:Date,
+            value:function(){
+              return new Date();
+            }
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PolymerCoreConcepts.is, PolymerCoreConcepts);
+  </script>
+</dom-module>
